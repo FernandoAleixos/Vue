@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>V-IF</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
+</head>
+<body>
+    <div id="app">
+        <input type="checkbox" v-model="marcado"> Marca y desmarca
+
+        <p v-if="marcado">
+            El checkbox está marcado
+        </p>
+        <p v-else>
+            El checkbox está desmarcado
+        </p>
+    </div>
+    
+    <script src="vue1.js"></script>
+</body>
+</html>

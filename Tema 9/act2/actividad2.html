@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>V-IF</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
+</head>
+<body>
+    <div id="app">
+        <div v-for="({cita, autor}, index) in citas">
+            <p>{{index + 1}} {{cita}}</p>
+            <blockquote v-if="autor">- {{autor}}</blockquote>
+        </div>
+
+        <input v-model="nuevaCita" type="text">
+
+        <button v-on:click="anyadeCita">
+            Añadir cita
+        </button>
+
+    </div>
+    
+    <script src="vue2.js"></script>
+</body>
+</html>

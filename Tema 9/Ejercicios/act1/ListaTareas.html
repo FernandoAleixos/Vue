@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de tareas</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="vue">
+        <h2>Cosas a hacer este año:</h2>
+        
+        <p v-if="vacio">No hay tareas que mostrar</p>
+    
+        <ol v-else>
+            <li v-for="({tarea}) in tareas">
+                <input type="checkbox" />{{tarea}}
+            </li>
+        </ol>
+        
+        
+        <input v-model="nuevaTarea" type="text">
+
+        <button v-on:click="anyadeTarea">
+            Añadir tarea
+        </button>
+    </div>
+
+    <script src="listaVue.js"></script>
+</body>
+</html>

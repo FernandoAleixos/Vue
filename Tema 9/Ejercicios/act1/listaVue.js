@@ -4,14 +4,14 @@ Vamos a hacer una aplicación para gestionar una lista de cosas a hacer. Cada co
 Debe aparecer la lista de cosas a hacer con:
 
     1. Un checkbox para cada cosa que nos indica si está o no hecha (y que podemos marcar/desmarcar para cambiar su estado)
-    2. El título de la cosa a hacer, que aparecerá tachado si su estado es que ya está hecha Además queremos que:
+    2. El título de la cosa a hacer, que aparecerá tachado si su estado es que ya está hecha. Además queremos que:
         - Al hacer doble click en una cosa a hacer debe borrarse de la lista bajo la lista aparecerá un input con un botón para añadir nuevas cosas a la lista.
-        - Sólo se añade si hemos introducido texto y su estado al añadirla será de NO hecha debajo tendremos un botón que borrará toda la lista de cosas a hacer tras pedir confirmación al usuario
+        - Sólo se añade si hemos introducido texto y su estado al añadirla será de NO hecha, debajo tendremos un botón que borrará toda la lista de cosas a hacer tras pedir confirmación al usuario
 */
 
 const tareas = [
     {
-        tarea: "Montar el arbol de navidad"
+        tarea: ""
     }
 ]
 
@@ -32,6 +32,12 @@ const app = Vue.createApp({
                         tarea: this.nuevaTarea
                     }
                 )
+                this.vacio = false
+            },
+
+            borrarLista() {
+                this.tareas = []
+                this.vacio = true
             }
         }
 })

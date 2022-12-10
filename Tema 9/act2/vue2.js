@@ -1,19 +1,7 @@
 const citas = [
 	{
 		cita: "Buenas tardes",
-		autor: "Paco"
-	},
-	{
-		cita: "Buenas",
-		autor: "Enrique"
-	},
-	{
-		cita: "Hola",
-		autor: "Casildo"
-	},
-	{
-		cita: "Que tal",
-		autor: "Federico"
+		autor: ""
 	}
 ]
 

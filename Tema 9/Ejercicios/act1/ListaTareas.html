@@ -11,17 +11,22 @@
         
         <p v-if="vacio">No hay tareas que mostrar</p>
     
-        <ol v-else>
-            <li v-for="({tarea}) in tareas">
+        <ul v-else>
+            <li v-for="{tarea} in tareas">
                 <input type="checkbox" />{{tarea}}
             </li>
-        </ol>
-        
+        </ul>
         
         <input v-model="nuevaTarea" type="text">
 
         <button v-on:click="anyadeTarea">
             Añadir tarea
+        </button>
+
+        <br/>
+
+        <button v-on:click="borrarLista">
+            Borrar toda la lista
         </button>
     </div>
 

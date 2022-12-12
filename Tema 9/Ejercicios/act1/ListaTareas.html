@@ -12,8 +12,10 @@
         <p v-if="vacio">No hay tareas que mostrar</p>
     
         <ul v-else>
-            <li v-for="{tarea} in tareas">
-                <input type="checkbox" />{{tarea}}
+            <li v-for="element in tareas">
+                <input type="checkbox" v-model="element.done">
+                <del v-if="element.done">{{element.tarea}}</del> 
+                <span v-else>{{element.tarea}}</span>
             </li>
         </ul>
         

@@ -19,7 +19,7 @@
             </li>
         </ul>
         
-        <input v-model="nuevaTarea" type="text">
+        <input v-model.trim="nuevaTarea" type="text">
 
         <button v-on:click="anyadeTarea">
             Añadir tarea

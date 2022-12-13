@@ -28,17 +28,23 @@ const app = Vue.createApp({
     
         methods: {
             anyadeTarea() {
-                this.tareas.unshift(
-                    {
-                        tarea: this.nuevaTarea
-                    }
-                )
-                this.vacio = false
+                if(this.nuevaTarea) {
+                    this.tareas.unshift(
+                        {
+                            tarea: this.nuevaTarea
+                        }
+                    )
+                    this.vacio = false
+                } else {
+                    alert("Debes introducir un campo válido")
+                }
             },
 
             borrarLista() {
-                this.tareas = []
-                this.vacio = true
+                if(confirm("¿Seguro que deseas borrar la lista?")) {
+                    this.tareas = []
+                    this.vacio = true
+                }
             }
         }
 })

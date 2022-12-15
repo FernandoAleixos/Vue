@@ -40,6 +40,10 @@ const app = Vue.createApp({
                 }
             },
 
+            borrarTarea(event) {
+                event.remove()
+            },
+
             borrarLista() {
                 if(confirm("¿Seguro que deseas borrar la lista?")) {
                     this.tareas = []

@@ -8,36 +8,47 @@ Debe aparecer la lista de cosas a hacer con:
         - Al hacer doble click en una cosa a hacer debe borrarse de la lista bajo la lista aparecerá un input con un botón para añadir nuevas cosas a la lista.
         - Sólo se añade si hemos introducido texto y su estado al añadirla será de NO hecha, debajo tendremos un botón que borrará toda la lista de cosas a hacer tras pedir confirmación al usuario
 */
-
-const tareas = [
-    {
-        tarea: ""
-    }
-]
-
 const app = Vue.createApp({
-
         data() {
             return {
-                tareas,
+                tareas: [
+                    {
+                        tarea: "Montar el arbol de navidad",
+                        done: true
+                    },
+                    {
+                        tarea: "Escribir la carta a los reyes magos",
+                        done: false
+                    }
+                ],
                 nuevaTarea: "",
-                vacio: true
+                vacio: false
             }
         },
     
         methods: {
             anyadeTarea() {
-                this.tareas.unshift(
-                    {
-                        tarea: this.nuevaTarea
-                    }
-                )
-                this.vacio = false
+                if(this.nuevaTarea) {
+                    this.tareas.unshift(
+                        {
+                            tarea: this.nuevaTarea
+                        }
+                    )
+                    this.vacio = false
+                } else {
+                    alert("Debes introducir un campo válido")
+                }
+            },
+
+            borrarTarea(event) {
+                event.remove()
             },
 
             borrarLista() {
-                this.tareas = []
-                this.vacio = true
+                if(confirm("¿Seguro que deseas borrar la lista?")) {
+                    this.tareas = []
+                    this.vacio = true
+                }
             }
         }
 })
